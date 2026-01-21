@@ -1,12 +1,19 @@
-/* Basic reset + fonts */
+/* Google Sites–like baseline */
 
-body, html, .container {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-.container {
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+  background: #ffffff;
+}
+
+/* Layout */
+
+.shell {
   display: flex;
   min-height: 100vh;
 }
@@ -14,57 +21,111 @@ body, html, .container {
 /* Sidebar */
 
 .sidebar {
-  width: 230px;
-  background-color: #1e1e2f;
+  width: 260px;
+  background: linear-gradient(180deg, #1b1e30, #14162a);
+  padding: 28px 22px;
   color: #fff;
-  padding: 20px;
 }
 
-.site-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 28px;
 }
 
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #fff;
+.sidebar nav a {
   display: block;
-  padding: 8px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
   border-radius: 4px;
+  margin-bottom: 6px;
 }
 
-.sidebar a:hover {
-  background-color: #2a2a44;
+.sidebar nav a:hover {
+  background: rgba(255,255,255,0.08);
 }
 
-/* Main content */
+.sidebar nav a.active {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Content area */
 
 .content {
-  padding: 30px;
   flex: 1;
+  padding: 48px 64px;
 }
 
-.content h1, .content h2 {
-  color: #222;
+/* This is the KEY Google Sites constraint */
+.content > section {
+  max-width: 900px;
 }
 
-.team {
+/* Typography */
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Cards (image + caption like Google Sites) */
+
+.cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 48px;
+  margin-top: 24px;
 }
 
-.team-member {
-  width: 120px;
-  text-align: center;
+.card {
+  width: 140px;
+  text-align: left;
 }
 
-.team-member img {
+.card img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 6px;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #202124;
+}
+
+/* Document links */
+
+.links {
+  padding-left: 18px;
+}
+
+.links li {
+  margin-bottom: 6px;
+}
+
+.links a {
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: underline;
 }
